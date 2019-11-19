@@ -3,39 +3,245 @@ import ReactDOM from 'react-dom'
 
 
 
-const App = (props) => {
-  const [value, setValue] = useState(10)
 
-  const hello = (who) => {
-    const handler = () => {
-      console.log('hello', who)
-    }
-    return handler
+const Button = (props) => (
+  <button onClick={props.handleClick}>
+    {props.text}
+  </button>
+)
+
+const Statistics = (props) =>{
+<div>{this.props.text}{this.props.value}</div>
+} 
+
+
+const App = () => {
+  // save clicks of each button to own state
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  const setToGood = newValue =>{
+    setGood(newValue)
   }
+
+  const setToNeutral = newValue =>{
+    setNeutral(newValue)
+  }
+
+  const setToBad = newValue =>{
+    setBad(newValue)
+  }
+
+
+
 
   return (
     <div>
-      {value}
-      <button onClick={hello('world')}>button</button>
-      <button onClick={hello('react')}>button</button>
-      <button onClick={hello('function')}>button</button>
+      code here
     </div>
   )
 }
 
-
-
-
-
-
-ReactDOM.render(
-  <App />, 
+ReactDOM.render(<App />, 
   document.getElementById('root')
 )
 
 
+// const Display = props => <div>{props.value}</div>
+
+// const Button = (props) => (
+//   <button onClick={props.handleClick}>
+//     {props.text}
+//   </button>
+// )
+
+// const App = props => {
+//   const [value, setValue] = useState(10)
+
+//   const setToValue = newValue => {
+//     setValue(newValue)
+//   }
+
+//   return (
+//     <div>
+//       <Display value={value} />
+//       <Button handleClick={() => setToValue(1000)} text="thousand" />
+//       <Button handleClick={() => setToValue(0)} text="reset" />
+//       <Button handleClick={() => setToValue(value + 1)} text="increment" />
+//     </div>
+//   )
+// }
+
+// valor por defecto de value
+
+//----------------------MANEJO DE STATEMENTS--------------//
+// const App = (props) => {
+//   const [value, setValue] = useState(10)
+  
+//   const setToValue = (newValue) =>{
+//     setValue(newValue)
+//   }
+  
+//   return (
+//     <div>
+//       {value}
+//       <button onClick={() => setToVReactDOM.render(
+//         thousand
+//         </button>
+//       <button onClick={() => setToValue(0)}>
+//         reset
+//         </button>
+//       <button onClick={() => setToValue(value + 1)}>
+//         increment</button>
+//     </div>
+//   )
+// }
+
+// const App = (props) => {
+//   const [value, setValue] = useState(10)
+
+//   const setToValue = (newValue) => {
+//     setValue(newValue)
+//   }
+
+//   return (
+//     <div>
+//       {value}
+//       <button onClick={() => setToValue(1000)}>
+//         thousand
+//       </button>
+//       <button onClick={() => setToValue(0)}>
+//         reset
+//       </button>
+//       <button onClick={() => setToValue(value + 1)}>
+//         increment
+//       </button>
+//     </div>
+//   )
+// }
 
 
+
+
+
+//---------------COMPLEX STATE----------------//
+
+// const App = () => {
+//   const [value] = useState()
+
+//   const Hello = (who) => () => {
+//     console.log('hello', who)
+//   }
+
+//   return (
+//     <div>
+//       {value}
+//       <button onClick={Hello('world')}>button</button>
+//       <button onClick={Hello('react')}>button</button>
+//       <button onClick={Hello('function')}>button</button>
+//     </div>
+//   )
+// }
+
+
+
+
+
+// const Button = ({ onClick, text }) => (
+//   <button onClick={onClick}>
+//     {text}
+//   </button>
+//   )
+
+// const Statistics = (props) => {
+
+//   return(
+//     <>
+//       <div>
+//         <h2>Statistics</h2>
+//   <p>All {props.allClicks}</p>
+//       </div>
+//     </>
+//   )}
+
+
+// const App = (props) =>{
+//   //save the clicks
+//   const [good, setGood] = useState(0)
+//   const [neutral, setNeutral] = useState(0)
+//   const [bad, setBad] = useState(0)
+//   const [allClicks, setAll] = useState(0)
+
+//     const handleGood = () =>{
+//       setAll(allClicks + 1)
+//       setGood(good + 1)
+//     }
+
+//     const handleNeutral = () => {
+//       setAll(allClicks + 1)
+//       setNeutral(neutral + 1)
+//     }
+
+//     const handleBad = () =>{
+//       setAll(allClicks + 1)
+//       setBad(bad + 1)
+//     }
+
+
+
+
+
+//   return(
+//     <div>
+//      <h2>give feedback</h2>
+//      <Button onClick = {handleGood} text='Good'></Button>
+//      <Button onClick = {handleNeutral} text = 'Neutral'></Button>
+//      <Button onClick = {handleBad} text='Bad'></Button>
+//      <Statistics ></Statistics>
+//     </div>
+//   )
+
+// }
+
+
+
+
+
+
+
+// const App = (props) => {
+//   const [value] = useState()
+
+//   const hello = (who) => {
+//     const handl// const Button = ({ onClick, text }) => (
+//   <button onClick={onClick}>
+//     {text}
+//   </button>er = () => {
+//       console.log('hello', who)
+//     }
+//     return handler
+//   }
+
+//   return (
+//     <div>
+//        llClick{hello('world')}>world</button>
+//       <button onC// const History = (props) => {
+//   if (props.allClicks.length === 0) {
+//     return (
+//       <div>
+//         the app is used by pressing the buttons
+//       </div>
+//     )
+//   }
+
+//       button press history: {props.allClicks.join(' ')}
+//     </div>
+//   )
+// }lick={hello('function')}>function</button>
+//     </div>
+//   )
+// }
 
 
 //-----------------ejemplo botones set echo por mi-------------------//
@@ -44,21 +250,22 @@ ReactDOM.render(
 //   <button onClick={onClick}>
 //     {text}
 //   </button>
-// )
 
-
-
-
-// const App = (props) => {
-//   const [value, setValue] = useState(10)
 
 //   const setToCero =() =>{
 //     setValue(0)
 //   }
-
-//   const setToTen =() =>{
-//     setValue(10)
+//   if (props.allClicks.length === 0) {
+//     return (
+//       <div>
+//         the app is used by pressing the buttons
+//       </div>
+//     )
 //   }
+
+//       button press history: {props.allClicks.join(' ')}
+//     </div>
+//   )
 //   return (
 //     <div>
 //       {value}
@@ -67,7 +274,6 @@ ReactDOM.render(
 //     </div>
 //   )
 // }
-
 
 
 //--------------------Ejemplo complex State con clicks--------------------------//
@@ -81,8 +287,6 @@ ReactDOM.render(
 //     )
 //   }
 
-//   return (
-//     <div>
 //       button press history: {props.allClicks.join(' ')}
 //     </div>
 //   )
@@ -92,9 +296,6 @@ ReactDOM.render(
 // const Button = ({ onClick, text }) => (
 //   <button onClick={onClick}>
 //     {text}
-//   </button>
-// )
-
 
 
 // const App = (props) => {
@@ -123,12 +324,6 @@ ReactDOM.render(
 //     </div>
 //   )
 // }
-
-
-
-
-
-
 
   //---------EJEMPLO CONTADOR DE CLICKS---------//
 
@@ -159,5 +354,8 @@ ReactDOM.render(
   //     </div>
   //   )
   // }
+
+
+
 
 
